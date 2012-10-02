@@ -1,0 +1,45 @@
+
+common: &default_settings
+
+  license_key: 'a9c91762fded936f6910f5bd1ab37476683ffd31'
+  agent_enabled: auto
+  app_name: <%= ENV["NEW_RELIC_APP_NAME"] %>
+  monitor_mode: true
+  developer_mode: false
+  log_level: info
+  ssl: false
+  # verify_certificate: true
+  apdex_t: 0.5
+  capture_params: false
+
+  transaction_tracer:
+    enabled: true
+    transaction_threshold: apdex_f
+    record_sql: obfuscated
+    stack_trace_threshold: 0.500
+    # explain_enabled: true
+    # explain_threshold: 0.5
+
+  error_collector:
+    enabled: true
+    capture_source: true
+    ignore_errors: ActionController::RoutingError
+  # multi_threaded = false
+
+development:
+  <<: *default_settings
+  monitor_mode: false
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+production:
+  <<: *default_settings
+  monitor_mode: true
+
+staging:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: <%= ENV["NEW_RELIC_APP_NAME"] %> (Staging)

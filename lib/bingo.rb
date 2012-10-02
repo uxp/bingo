@@ -1,5 +1,6 @@
 
 require 'sinatra'
+require 'newrelic_rpm'
 
 require 'bingo/app'
 require 'bingo/card'
