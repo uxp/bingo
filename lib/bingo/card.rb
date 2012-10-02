@@ -28,7 +28,15 @@ module Bingo
 			'Al Qaeda',
 			'Cap and Trade',
 			'Toxic Assets',
-			'Bain Capital'
+			'Bain Capital',
+			'Apologize',
+			'Change',
+			'Sequester',
+			'Washington Outsider',
+			'Cayman Islands',
+			'Let Detroit Go Bankrupt',
+			'Trickle Down',
+			'DEBT'
 		]
 
 		def initialize
