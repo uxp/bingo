@@ -21,12 +21,29 @@
   %link{:href => '/favicon.ico', :rel => "shortcut icon"}/
   %link{:href => '/apple-touch-icon.png', :rel => "apple-touch-icon"}
 
+  %script{src: '/javascripts/jquery-1.7.2.min.js', type: 'text/javascript'}
+  %script{src: '/bootstrap/js/bootstrap.min.js', type: 'text/javascript'}
+
+  %link{href: '/bootstrap/css/bootstrap.min.css', rel: 'stylesheet', type: 'text/css', media: 'screen'}
   %link{href: '/stylesheets/application.css', rel: 'stylesheet', type: 'text/css', media: 'screen'}
   %link{href: '/stylesheets/print.css', rel: 'stylesheet', type: 'text/css', media: 'print'}
 
 %body{id: 'index'}
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      %a{href: '/', class: 'brand'} 2012 Presidential Debate Bingo
 
-  #wrapper
+      %ul.nav.pull-right
+        %li.dropdown
+          %a{href: '#', class: 'dropdown-toggle', data: {toggle: 'dropdown'}}
+            Link 1
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: '#'} Link 2
 
-    = yield
+
+  .container
+    #wrapper
+      = yield
 

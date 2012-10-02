@@ -2,7 +2,11 @@
 	margin: 0;
 	padding: 0;
 }
-	
+
+.navbar {
+	display: none;
+}
+
 #wrapper {
 	margin: 0;
 	padding: 0;
