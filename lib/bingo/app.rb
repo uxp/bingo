@@ -17,6 +17,15 @@ module Bingo
 			haml :index
 		end
 
+		get '/status' do
+			content_type 'application/json'
+			{status: 'OK'}.to_json
+		end
+
+		get '/about' do
+			haml :about
+		end
+
 	end
 
 end
