@@ -1,28 +1,28 @@
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #wrapper {
-	padding-top: 100px;
+  padding-top: 100px;
 }
 
 table.table {
-	font-size: 14px;
+  font-size: 14px;
 }
 table.table thead tr th {
-	text-align: center;
-	font-size: 36px;
+  text-align: center;
+  font-size: 36px;
 }
 
 table.table tbody tr td {
-	width: 20%;
-	height: 125px;
-	text-align: center;
-	vertical-align: inherit;
+  width: 20%;
+  height: 125px;
+  text-align: center;
+  vertical-align: inherit;
 }
 
 table.table tbody span {
-	font-size: 11px;
+  font-size: 11px;
 }
 
