@@ -1,7 +1,7 @@
 
 common: &default_settings
 
-  license_key: 'a9c91762fded936f6910f5bd1ab37476683ffd31'
+  license_key: <% ENV["NEW_RELIC_LICENSE_KEY"] %>
   agent_enabled: auto
   app_name: <%= ENV["NEW_RELIC_APP_NAME"] %>
   monitor_mode: true
