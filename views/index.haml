@@ -10,7 +10,7 @@
         %th G
         %th O
     %tbody
-      - @card.values.each do |row|
+      - @card.grid.each do |row|
         %tr
           - row.each do |column|
             %td
