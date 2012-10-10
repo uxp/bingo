@@ -3,30 +3,30 @@ require 'sinatra'
 
 module Bingo
 
-	class App < Sinatra::Base
-		use Rack::Logger
+  class App < Sinatra::Base
+    use Rack::Logger
 
-		set :root, Bingo.root
-		set :haml, format: :html5
+    set :root, Bingo.root
+    set :haml, format: :html5
 
-		configure :production, :development do
-			enable :logging
-		end
+    configure :production, :development do
+      enable :logging
+    end
 
-		get '/' do
-			@card = Bingo::Card.new
-			haml :index
-		end
+    get '/' do
+      @card = Bingo::Card.new
+      haml :index
+    end
 
-		get '/status' do
-			content_type 'application/json'
-			{status: 'OK'}.to_json
-		end
+    get '/status' do
+      content_type 'application/json'
+      {status: 'OK'}.to_json
+    end
 
-		get '/about' do
-			haml :about
-		end
+    get '/about' do
+      haml :about
+    end
 
-	end
+  end
 
 end

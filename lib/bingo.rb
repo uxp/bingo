@@ -8,11 +8,11 @@ require 'bingo/version'
 
 module Bingo
 
-	autoload :App,   'bingo/app'
-	autoload :Card,  'bingo/card'
+  autoload :App,   'bingo/app'
+  autoload :Card,  'bingo/card'
 
-	def self.root
-		File.expand_path(File.dirname(File.dirname(__FILE__)))
-	end
+  def self.root
+    File.expand_path(File.dirname(File.dirname(__FILE__)))
+  end
 
 end

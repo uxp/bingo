@@ -12,7 +12,7 @@ module Bingo
       5.times do |column|
         @grid[column] = Array.new
         5.times do |row|
-					# on the center square, set a predefined value
+          # on the center square, set a predefined value
           if row == 2 and column == 2
             @grid[column][row] = "#{values['freespace']['value']}#{values['freespace']['html']}"
           else
@@ -23,18 +23,15 @@ module Bingo
       end
     end
 
-		def load_values
-			list = File.open(wordlist_path)
-			YAML::load(list.read)
-		end
+    def load_values
+      list = File.open(wordlist_path)
+      YAML::load(list.read)
+    end
 
-		private
-		def wordlist_path
-			File.join(Bingo.root, 'config', 'wordlist.yml')
-		end
-
-		def wordlist
-		end
+    private
+    def wordlist_path
+      File.join(Bingo.root, 'config', 'wordlist.yml')
+    end
 
   end
 end
