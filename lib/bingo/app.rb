@@ -20,7 +20,10 @@ module Bingo
 
     get '/status' do
       content_type 'application/json'
-      {status: 'OK'}.to_json
+      {
+        status:  'OK',
+        version: Bingo::VERSION
+      }.to_json
     end
 
     get '/about' do
