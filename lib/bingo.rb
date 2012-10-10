@@ -2,14 +2,17 @@
 require 'sinatra'
 require 'newrelic_rpm'
 require 'json'
+require 'yaml'
 
-require 'bingo/app'
-require 'bingo/card'
+require 'bingo/version'
 
 module Bingo
 
-  def self.run
-    run Bingo::App
-  end
+	autoload :App,   'bingo/app'
+	autoload :Card,  'bingo/card'
+
+	def self.root
+		File.expand_path(File.dirname(File.dirname(__FILE__)))
+	end
 
 end

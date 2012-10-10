@@ -2,67 +2,39 @@
 module Bingo
   class Card
 
-    attr_reader :values
-
-    VALUES = [
-      '$716 Billion',
-      'Freedom of Religion',
-      'Class Warfare',
-      'Obamacare',
-      'Work Requirement',
-      'Pathway to Greece',
-      '47%',
-      'Obamaphone',
-      'Voucher Program',
-      'Bush Tax Cuts',
-      'Bow to China',
-      'The Euro Crisis',
-      'Keystone Pipeline',
-      'Teachers Unions',
-      'Nuclear Iran',
-      'Bailout',
-      '"Out of Context"',
-      'Bootstraps',
-      'Entitlement',
-      'The "Buffett Rule"',
-      'Doubling Down',
-      'Middle Class',
-      'Solyndra',
-      'US Manufacturing',
-      'Quantitative Easing',
-      'Outsourcing',
-      'Fair Share',
-      'Muslim',
-      'Al Qaeda',
-      'Cap and Trade',
-      'Toxic Assets',
-      'Bain Capital',
-      'Apologize',
-      'Change',
-      'Sequester',
-      'Washington Outsider',
-      'Cayman Islands',
-      'Let Detroit Go Bankrupt',
-      'Trickle Down',
-      'DEBT'
-    ]
+    attr_reader :grid
 
     def initialize
-      options = VALUES.dup
-      @values = Array.new
+      values = load_values
+
+      @grid = Array.new
 
       5.times do |column|
-        @values[column] = Array.new
+        @grid[column] = Array.new
         5.times do |row|
+					# on the center square, set a predefined value
           if row == 2 and column == 2
-            @values[column][row] = 'Job Creators<br><span class="freespace">Free Space</span>'
+            @grid[column][row] = "#{values['freespace']['value']}#{values['freespace']['html']}"
           else
-            @values[column][row] = options.sample
-            options.delete @values[column][row]
+            @grid[column][row] = values['values'].sample
+            values.delete @grid[column][row]
           end
         end
       end
     end
+
+		def load_values
+			list = File.open(wordlist_path)
+			YAML::load(list.read)
+		end
+
+		private
+		def wordlist_path
+			File.join(Bingo.root, 'config', 'wordlist.yml')
+		end
+
+		def wordlist
+		end
 
   end
 end
